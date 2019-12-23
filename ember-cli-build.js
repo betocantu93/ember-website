@@ -5,6 +5,9 @@ const broccoliAssetRevDefaults = require('broccoli-asset-rev/lib/default-options
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    babel: {
+      plugins: [ require.resolve('ember-auto-import/babel-plugin') ]
+    },
     ifa: {
       enabled: true,
       inline: true,
@@ -49,6 +52,7 @@ module.exports = function (defaults) {
         'releases/release',
         'releases/canary',
         'releases/beta',
+        'releases/lts',
         'ember-community-survey-2016',
         'ember-community-survey-2017',
         'ember-community-survey-2018',
